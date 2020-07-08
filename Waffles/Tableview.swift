@@ -12,25 +12,17 @@ struct Tableview: View {
     
     var body: some View {
         ScrollView(.horizontal) {
-            VStack(alignment: .leading) {
-                HStack {
-                    ForEach(table.columns, id: \.self) { column in
-                        Text(column)
-                            .fontWeight(.semibold)
-                            .frame(width: 200, alignment: .topLeading)
-                    }
-                }.padding(.bottom, 5)
-                
-                ForEach(table.rows, id: \.self) { row in
-                    TableviewRow(columns: table.columns, row: row)
+            TableComponent(columns: table.columns, rows: table.rows) { column, row, value in
+                if let cell = value as? String {
+                    Text(cell)
                 }
-                
-                Spacer()
-            }.padding()
+            }
+            
+            Spacer()
         }
         .background(Color.white)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .navigationTitle("blog • \(table.name)")
+        .navigationTitle(table.name)
         .toolbar {
             ToolbarItem(placement: .navigation) {
                 Button(action: {}) {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		853E55AA24B63B760079B16C /* TableComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853E55A924B63B760079B16C /* TableComponent.swift */; };
 		85C095FC24B3BFB100B33EC0 /* WafflesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C095FB24B3BFB100B33EC0 /* WafflesApp.swift */; };
 		85C095FE24B3BFB100B33EC0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C095FD24B3BFB100B33EC0 /* ContentView.swift */; };
 		85C0960024B3BFB300B33EC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85C095FF24B3BFB300B33EC0 /* Assets.xcassets */; };
@@ -16,7 +17,6 @@
 		85C0962824B3C17200B33EC0 /* Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C0962724B3C17200B33EC0 /* Sidebar.swift */; };
 		85C0962A24B3C32500B33EC0 /* Tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C0962924B3C32500B33EC0 /* Tableview.swift */; };
 		85C0962D24B3C6CF00B33EC0 /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C0962C24B3C6CF00B33EC0 /* Table.swift */; };
-		85C0962F24B3CFF600B33EC0 /* TableviewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C0962E24B3CFF600B33EC0 /* TableviewRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		853E55A924B63B760079B16C /* TableComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableComponent.swift; sourceTree = "<group>"; };
 		85C095F824B3BFB100B33EC0 /* Waffles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Waffles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C095FB24B3BFB100B33EC0 /* WafflesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WafflesApp.swift; sourceTree = "<group>"; };
 		85C095FD24B3BFB100B33EC0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,7 +54,6 @@
 		85C0962724B3C17200B33EC0 /* Sidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sidebar.swift; sourceTree = "<group>"; };
 		85C0962924B3C32500B33EC0 /* Tableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tableview.swift; sourceTree = "<group>"; };
 		85C0962C24B3C6CF00B33EC0 /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
-		85C0962E24B3CFF600B33EC0 /* TableviewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableviewRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +81,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		853E55AB24B63B870079B16C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				853E55AC24B63B900079B16C /* Table */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		853E55AC24B63B900079B16C /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				853E55A924B63B760079B16C /* TableComponent.swift */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
 		85C095EF24B3BFB100B33EC0 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +120,7 @@
 		85C095FA24B3BFB100B33EC0 /* Waffles */ = {
 			isa = PBXGroup;
 			children = (
+				853E55AB24B63B870079B16C /* Views */,
 				85C0962B24B3C6BC00B33EC0 /* Models */,
 				85C095FB24B3BFB100B33EC0 /* WafflesApp.swift */,
 				85C095FD24B3BFB100B33EC0 /* ContentView.swift */,
@@ -113,7 +130,6 @@
 				85C0960124B3BFB300B33EC0 /* Preview Content */,
 				85C0962724B3C17200B33EC0 /* Sidebar.swift */,
 				85C0962924B3C32500B33EC0 /* Tableview.swift */,
-				85C0962E24B3CFF600B33EC0 /* TableviewRow.swift */,
 			);
 			path = Waffles;
 			sourceTree = "<group>";
@@ -282,8 +298,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				85C095FE24B3BFB100B33EC0 /* ContentView.swift in Sources */,
+				853E55AA24B63B760079B16C /* TableComponent.swift in Sources */,
 				85C0962D24B3C6CF00B33EC0 /* Table.swift in Sources */,
-				85C0962F24B3CFF600B33EC0 /* TableviewRow.swift in Sources */,
 				85C0962A24B3C32500B33EC0 /* Tableview.swift in Sources */,
 				85C0962824B3C17200B33EC0 /* Sidebar.swift in Sources */,
 				85C095FC24B3BFB100B33EC0 /* WafflesApp.swift in Sources */,

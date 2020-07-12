@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct WafflesApp: App {
-    var body: some Scene {
+    @ObservedObject var settings = SettingsModel()
+    
+    @SceneBuilder var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(settings).preferredColorScheme(settings.colorScheme)
         }
+        
+        #if os(macOS)
+        Settings {
+            SettingsView().environmentObject(settings).preferredColorScheme(settings.colorScheme)
+        }
+        #endif
     }
 }

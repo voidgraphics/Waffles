@@ -8,16 +8,31 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var settings: SettingsModel
+
     var tables = [
         Table(name: "posts"),
         Table(name: "comments"),
-        Table(name: "authors")
+        Table(name: "authors"),
+        
+            Table(name: "posts"),
+            Table(name: "comments"),
+            Table(name: "authors"),
+        
+            Table(name: "posts"),
+            Table(name: "comments"),
+            Table(name: "authors"),
+        
+            Table(name: "posts"),
+            Table(name: "comments"),
+            Table(name: "authors"),
+        
     ]
-    
+
     var body: some View {
         NavigationView {
             Sidebar(tables: tables)
-            Tableview(table: tables[0])
+            Tableview(table: tables[0]).environmentObject(settings)
         }
     }
 }

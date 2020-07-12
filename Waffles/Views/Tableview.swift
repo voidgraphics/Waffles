@@ -8,25 +8,26 @@
 import SwiftUI
 
 struct Tableview: View {
+    @EnvironmentObject var settings: SettingsModel
     var table: Table
     
     var body: some View {
         ScrollView(.horizontal) {
-            TableComponent(columns: table.columns, rows: table.rows) { column, row, value in
+            TableComponent(columns: table.columns, rows: table.rows, rowPadding: settings.tableRowPadding) { column, row, value in
                 if let cell = value as? String {
                     Text(cell)
                 }
             }
-            
+
             Spacer()
         }
-        .background(Color.white)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .navigationTitle(table.name)
+        .navigationSubtitle("\(table.rows.count) rows")
         .toolbar {
-            ToolbarItem(placement: .navigation) {
+            ToolbarItem(placement: .status) {
                 Button(action: {}) {
-                    Image(systemName: "internaldrive")
+                    Image(systemName: "square.and.arrow.up")
                 }
             }
         }

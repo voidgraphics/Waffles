@@ -27,6 +27,11 @@ struct Tableview: View {
         .toolbar {
             ToolbarItem(placement: .status) {
                 Button(action: {}) {
+                    Image(systemName: "pencil")
+                }
+            }
+            ToolbarItem(placement: .status) {
+                Button(action: {}) {
                     Image(systemName: "square.and.arrow.up")
                 }
             }

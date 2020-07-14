@@ -17,7 +17,7 @@ struct SidebarDropdownButtonStyle: ButtonStyle {
             Image(systemName: "chevron.down")
                 .foregroundColor(.secondary)
                 .font(.footnote)
-            Spacer().frame(width: 2)
+            Spacer().frame(width: 3)
         }
         .padding(5)
         .background(

@@ -22,22 +22,46 @@ struct TableComponent<Content> : View where Content : View {
     }
     
     var body: some View {
-        HStack(alignment: .top) {
-            ForEach(columns, id: \.self) { column in
-                VStack(alignment: .leading) {
-                    Text(column)
-                        .fontWeight(.semibold)
-                        .padding(.vertical, rowPadding)
-                        .lineLimit(1)
+        VStack(alignment: .leading, spacing: 0) {
+            HStack(spacing: 0) {
+                ForEach(columns, id: \.self) { column in
                     
-                    ForEach(0 ..< rows.count, id: \.self) { rowIndex in
-                        let row = rows[rowIndex]
-                        cell(column, rowIndex, row[column])
+                    HStack {
+                        Text(column)
                             .padding(.vertical, rowPadding)
+                            .padding(.horizontal)
                             .lineLimit(1)
-                    }
+                            
+                        Spacer()
+                        if column == columns[0] {
+                            Image(systemName: "chevron.down")
+                                .font(.footnote)
+                                .foregroundColor(.secondary)
+                        }
+                        Divider().frame(height: 32)
+                    }.frame(width: 120).background(Color.secondary.opacity(0.1))
+                    
                 }
             }
-        }.padding()
+             
+            ScrollView {
+                ForEach(0 ..< rows.count, id: \.self) { rowIndex in
+                    let row = rows[rowIndex]
+                    
+                    HStack(spacing: 0) {
+                        ForEach(columns, id: \.self) { column in
+                            HStack {
+                                cell(column, rowIndex, row[column])
+                                    .lineLimit(1)
+                                Spacer()
+                            }
+                            .padding(.vertical, rowPadding)
+                            .padding(.leading)
+                            .frame(width: 120)
+                        }
+                    }.background(Color.secondary.opacity(rowIndex % 2 == 0 ? 0.0001 : 0.1))
+                }
+            }
+        }
     }
 }

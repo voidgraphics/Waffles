@@ -16,33 +16,41 @@ struct SettingsView: View {
     ]
     
     var appearance: some View {
-        Form {
-            HStack {
-                Button(action: { model.tableRowPadding -= 1 }) {
-                    Text("-")
-                }
-                Text("\(model.tableRowPadding)")
-                Button(action: { model.tableRowPadding += 1 }) {
-                    Text("+")
+    
+            TabView {
+                Form {
+                    HStack {
+                        Button(action: { model.tableRowPadding -= 1 }) {
+                            Text("-")
+                        }
+                        Text("\(model.tableRowPadding)")
+                        Button(action: { model.tableRowPadding += 1 }) {
+                            Text("+")
+                        }
+                    }
+                    Picker("Color scheme", selection: $model.colorScheme) {
+                        ForEach(ColorScheme.allCases, id: \.self) { scheme in
+                            Text(colorSchemeNames[scheme] ?? "uhh")
+                        }
+                    }.pickerStyle(SegmentedPickerStyle())
+                    
+                    
+                    Button(action: { model.colorScheme = .dark }) {
+                        Text("Dark mode")
+                    }
+                    
+                    Button(action: { model.colorScheme = .light }) {
+                        Text("Light mode")
+                    }
+                }.tabItem {
+                    Text("General")
+                    Image(systemName: "gearshape")
                 }
             }
-            Picker("Color scheme", selection: $model.colorScheme) {
-                ForEach(ColorScheme.allCases, id: \.self) { scheme in
-                    Text(colorSchemeNames[scheme] ?? "uhh")
-                }
-            }.pickerStyle(SegmentedPickerStyle())
             
-            
-            Button(action: { model.colorScheme = .dark }) {
-                Text("Dark mode")
-            }
-            
-            Button(action: { model.colorScheme = .light }) {
-                Text("Light mode")
-            }
         }
         
-    }
+    
     
     var body: some View {
         appearance

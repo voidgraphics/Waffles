@@ -35,6 +35,10 @@ struct Sidebar: View {
                 NavigationLink(destination: Tableview(table: table), tag: table.name, selection: $table) {
                     Image(systemName: "folder")
                     Text(table.name)
+                }.contextMenu {
+                    Button("Export", action: {})
+                    Button("Rename", action: {})
+                    Button("Delete", action: {})
                 }
             }
             

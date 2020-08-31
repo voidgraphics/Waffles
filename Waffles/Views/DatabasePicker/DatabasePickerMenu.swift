@@ -29,13 +29,12 @@ struct DatabasePickerMenu: View {
                                     Image(systemName: "internaldrive")
                                     Text(database)
                                     Spacer()
-                                }.background(Color.secondary.opacity(0.001))
+                                }.padding(.vertical, 4).background(Color.secondary.opacity(0.001))
                             }
                             Button(action: {}) {
                                 Image(systemName: "pencil")
                             }
                         }
-                        
                         .buttonStyle(PlainButtonStyle())
                         .padding(.horizontal)
                         .frame(maxWidth: .infinity)

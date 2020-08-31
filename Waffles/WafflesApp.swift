@@ -18,7 +18,9 @@ struct WafflesApp: App {
         
         #if os(macOS)
         Settings {
-            SettingsView().environmentObject(settings).preferredColorScheme(settings.colorScheme)
+            SettingsView()
+                .environmentObject(settings)
+                .preferredColorScheme(settings.colorScheme)
         }
         #endif
     }

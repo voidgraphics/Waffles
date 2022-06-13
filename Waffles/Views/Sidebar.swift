@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Sidebar: View {
     @State private var table: String? = "posts"
-    var tables: [Table]
+    var tables: [DatabaseTable]
     
     @State private var database = "blog"
     var databases = ["blog", "hiker", "udnf"]

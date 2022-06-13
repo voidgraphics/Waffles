@@ -15,6 +15,9 @@ struct WafflesApp: App {
         WindowGroup {
             ContentView().environmentObject(settings).preferredColorScheme(settings.colorScheme)
         }
+        .commands {
+            SidebarCommands()
+        }
         
         #if os(macOS)
         Settings {

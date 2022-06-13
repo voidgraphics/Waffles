@@ -11,22 +11,9 @@ struct ContentView: View {
     @EnvironmentObject var settings: SettingsModel
 
     var tables = [
-        Table(name: "posts"),
-        Table(name: "comments"),
-        Table(name: "authors"),
-        
-            Table(name: "posts"),
-            Table(name: "comments"),
-            Table(name: "authors"),
-        
-            Table(name: "posts"),
-            Table(name: "comments"),
-            Table(name: "authors"),
-        
-            Table(name: "posts"),
-            Table(name: "comments"),
-            Table(name: "authors"),
-        
+        DatabaseTable(name: "posts"),
+        DatabaseTable(name: "comments"),
+        DatabaseTable(name: "authors"),
     ]
 
     var body: some View {

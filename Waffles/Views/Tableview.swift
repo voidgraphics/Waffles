@@ -15,22 +15,22 @@ struct Tableview: View {
     var body: some View {
         Table(table.rows) {
             TableColumn("id") { DatabaseRow in
-                Text("1")
+                Text("1").padding(settings.tableRowPadding)
             }
             TableColumn("name") { DatabaseRow in
-                Text("Adrien")
+                Text("Adrien").padding(settings.tableRowPadding)
             }
             TableColumn("lastname") { DatabaseRow in
-                Text("Leloup")
+                Text("Leloup").padding(settings.tableRowPadding)
             }
             TableColumn("email") { DatabaseRow in
-                Text("adrien@whitecube.be")
+                Text("adrien@whitecube.be").padding(settings.tableRowPadding)
             }
             TableColumn("created_at") { DatabaseRow in
-                Text("2022-06-13 18:11:00")
+                Text("2022-06-13 18:11:00").padding(settings.tableRowPadding)
             }
             TableColumn("updated_at") { DatabaseRow in
-                Text("2022-06-13 18:11:00")
+                Text("2022-06-13 18:11:00").padding(settings.tableRowPadding)
             }
         }
         .navigationTitle(table.name)

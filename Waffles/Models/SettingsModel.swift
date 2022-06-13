@@ -9,6 +9,6 @@ import Foundation
 import SwiftUI
 
 class SettingsModel: ObservableObject {
-    @Published var tableRowPadding : CGFloat = 8
+    @Published var tableRowPadding : CGFloat = 4
     @Published var colorScheme: ColorScheme = .dark
 }
